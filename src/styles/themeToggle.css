@@ -1,0 +1,24 @@
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+.theme-toggle button {
+  background: #fff0f5;
+  color: #2a0033;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+body[data-theme="rpg"] .theme-toggle button {
+  background: #2a0033;
+  color: #ffe7ff;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}

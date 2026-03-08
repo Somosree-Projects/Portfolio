@@ -1,0 +1,188 @@
+/* src/styles/loader.css */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #1b0033 10%, #0b001d 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spell-circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: rotate 6s linear infinite;
+}
+
+.circle-core {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 230, 255, 0.4), transparent 70%);
+  box-shadow: 0 0 25px #ffb3ff;
+  position: absolute;
+  z-index: 2;
+}
+
+.magic-ring {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #ff99ff;
+  border-radius: 50%;
+  position: absolute;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffe6ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ffb3ff;
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+.particle-0 { top: 0%; left: 50%; animation-delay: 0s; }
+.particle-1 { top: 20%; left: 85%; animation-delay: 0.3s; }
+.particle-2 { top: 50%; left: 100%; animation-delay: 0.6s; }
+.particle-3 { top: 80%; left: 85%; animation-delay: 0.9s; }
+.particle-0:nth-child(5) { top: 100%; left: 50%; animation-delay: 1.2s; }
+.particle-1:nth-child(6) { top: 80%; left: 15%; animation-delay: 1.5s; }
+.particle-2:nth-child(7) { top: 50%; left: 0%; animation-delay: 1.8s; }
+.particle-3:nth-child(8) { top: 20%; left: 15%; animation-delay: 2.1s; }
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-8px); opacity: 0.8; }
+}
+
+.loader-text {
+  margin-top: 2rem;
+  color: #ffdfff;
+  font-family: "Cinzel", serif;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px #ff99ff;
+  letter-spacing: 1px;
+}
+
+/* Cursor sparkle effect */
+.cursor-sparkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #ffb3ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  box-shadow: 0 0 10px #ffb3ff;
+  animation: sparkle-fade 0.8s ease-out forwards;
+}
+
+@keyframes sparkle-fade {
+  0% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Typing cursor */
+.cursor {
+  display: inline-block;
+  color: #ffcbff;
+  font-weight: bold;
+  animation: blink 1s step-end infinite, cursorGlow 1.2s ease-in-out infinite;
+  text-shadow: 0 0 8px #ff80df, 0 0 12px #d55aff;
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes cursorGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* --- Progress Ring Styles --- */
+.progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100px;
+  height: 100px;
+  z-index: 3;
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 6;
+}
+
+.progress-ring-fill {
+  fill: none;
+  stroke: #ff99ff;
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-text {
+  fill: #ffdfff;
+  font-size: 1 rem;
+  font-family: "Cinzel", serif;
+  transform: rotate(90deg); /* undo the SVG rotation */
+}
+
+.progress-text-overlay {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #ffdfff;
+  font-family: "Cinzel", serif;
+  text-shadow: 0 0 8px #ff99ff;
+  z-index: 5;
+  pointer-events: none;
+}
+

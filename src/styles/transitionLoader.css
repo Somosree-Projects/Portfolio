@@ -1,0 +1,45 @@
+/* src/styles/transitionLoader.css */
+.transition-loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 0, 30, 0.9);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.magic-orb {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff99ff, #8800aa);
+  box-shadow: 0 0 20px #ff99ff, 0 0 40px #ff00ff88;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  color: #ffe6ff;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px #ffccff;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}

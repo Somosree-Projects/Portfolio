@@ -1,0 +1,82 @@
+/* src/styles/projects.css */
+.projects-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #25004d, #1b0033);
+  text-align: center;
+  color: #fff;
+}
+
+.projects-heading {
+  font-size: 2.5rem;
+  font-family: 'Cinzel', serif;
+  color: #ffe7ff;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 15px #ff99ff;
+}
+
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #ff99ff33;
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px #ff69b433;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #ff69b4;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  font-family: 'Cinzel', serif;
+  color: #ffe7ff;
+  margin-bottom: 0.3rem;
+}
+
+.project-card .subtitle {
+  font-style: italic;
+  color: #ffc4ff;
+  margin-bottom: 1rem;
+}
+
+.project-card .description {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #e2d2ff;
+}
+
+.project-card .tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.project-card .tool {
+  background: #ff69b4;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #ffd0ff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #ff90ff;
+}
+

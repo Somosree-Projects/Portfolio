@@ -1,0 +1,86 @@
+/* src/styles/skills.css */
+.skills-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #1b0033, #25004d);
+  text-align: center;
+  color: #fff;
+}
+
+.skills-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: #ffe7ff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px #ff99ff;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill-glyph {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  text-align: center;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.skill-glyph:hover {
+  transform: scale(1.05);
+}
+
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.skill-glyph:hover .skill-icon {
+  transform: rotate(8deg) scale(1.2);
+}
+
+.skill-glyph p {
+  font-size: 0.9rem;
+  color: #e2d2ff;
+  font-weight: 600;
+}
+
+/* Add below your existing CSS */
+.skills-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.skills-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 30s linear infinite;
+  gap: 4rem;
+  padding: 2rem 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

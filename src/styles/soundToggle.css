@@ -1,0 +1,24 @@
+/* src/styles/soundToggle.css */
+.sound-toggle {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 999;
+}
+
+.sound-toggle button {
+  background: #2a0033;
+  color: #ffe7ff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff99ff;
+  transition: transform 0.2s;
+}
+
+.sound-toggle button:hover {
+  transform: scale(1.05);
+  background: #3a0055;
+}
