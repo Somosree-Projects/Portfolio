@@ -2,6 +2,7 @@
   "name": "artistic-quest-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Somosree-Projects.github.io/Portfolio",
   "dependencies": {
     "@react-three/drei": "^10.5.2",
     "@react-three/fiber": "^9.2.0",
