@@ -6,14 +6,23 @@ router.post("/", async (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+        user: process.env.GMAIL_USER, // your Gmail account
+        pass: process.env.GMAIL_PASS, // your Gmail password
     },
     tls: {
-      rejectUnauthorized: false, // Optional: fixes "self-signed certificate" issue
-    },
+        rejectUnauthorized: false
+    }
+  });
+  transporter.verify((error, success) => {
+    if (error) {
+        console.log('Server is not ready to take messages: ' + error);
+    } else {
+        console.log('Server is ready to take messages');
+    }
   });
 
   const mailOptions = {
